@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>index.html URL Fragment: <span id="urlFragmentArea"></span></div>
+    <iframe id="inner" src="iframe.html"></iframe>
+    <script>
+        // Transfar URL fragment from the iframe to the top-level context.
+        inner.onload = () => {
+            inner.contentWindow.addEventListener("hashchange", () => {
+                location.assign(location.hash === "#bar" ? "#foo" : "#bar")
+            })
+        }
+
+        // Show the URL fragment of the top-level context.
+        onhashchange = () => {
+            urlFragmentArea.innerText = location.hash
+        }
+    </script>
+</body>
+</html>
