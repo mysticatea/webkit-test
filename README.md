@@ -16,3 +16,7 @@ The URL fragments of `index.html` and `iframe.html` are changed.
 - Chromium 90.0.4421.0 : Fine
 - Firefox 86.0b10 : Fine
 - Safari 14.1 : Bad - The top-level browsing context navigated to `iframe.html` for some reason.
+
+## WebKit Bugzilla
+
+- https://bugs.webkit.org/show_bug.cgi?id=223439
